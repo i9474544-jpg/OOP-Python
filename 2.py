@@ -1,11 +1,11 @@
-class Car:
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
+import logging
+from datetime import date
 
-    def get_info(self):
-        return f"[{self.year}] {self.make} {self.model}"
-my_car = Car("Toyota", "Camry", 2020)
-print(my_car.get_info())
+logging.basicConfig(
+    filename="app.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d"
+)
 
+logging.info(f"Поточна дата: {date.today().strftime('%Y-%m-%d')}")
