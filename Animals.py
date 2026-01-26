@@ -5,7 +5,6 @@ DB_NAME = "AnimalKingdom.db"
 def main():
     conn = sqlite3.connect(DB_NAME)
     cur = conn.cursor()
-
     cur.execute("""
         CREATE TABLE IF NOT EXISTS Animals (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -13,9 +12,7 @@ def main():
             animal_type TEXT NOT NULL
         )
     """)
-
     cur.execute("DELETE FROM Animals")
-
     animals = [
         ("Лев", "Ссавець"),
         ("Крокодил", "Плазун"),
@@ -42,3 +39,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
